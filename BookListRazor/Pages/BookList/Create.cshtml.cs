@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace BookListRazor.Pages
+namespace BookListRazor.Pages.BookList
 {
-    public class IndexModel : PageModel
+    public class CreateModel : PageModel
     {
-        public IActionResult OnGet()
+        public void OnGet()
         {
-            return Page();
+
         }
     }
 }
