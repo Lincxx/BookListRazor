@@ -10,10 +10,33 @@ namespace BookListRazor.Pages.BookList
 {
     public class CreateModel : PageModel
     {
+        private readonly ApplicationDBContext _db;
+
+        public CreateModel(ApplicationDBContext db)
+        {
+            _db = db;
+        }
+
         [BindProperty]
         public Book Book { get; set; }
+
         public void OnGet()
         {
+
+        }
+
+        public async Task<IActionResult> OnPost()
+        {
+            //this is based of the Book, we have a required prop there
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            _db.Books.Add(Book);
+
+            await _db.SaveChangesAsync();
+            return RedirectToPage("Index");
 
         }
     }

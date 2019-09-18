@@ -22,6 +22,7 @@
                     <div class="col-sm-4">
                         <input asp-for="Book.Name" class="form-control" />
                     </div>
+                    <span asp-validation-for="Book.Name" class="text-danger"></span>
                 </div>
             </div>
             
@@ -62,5 +63,9 @@
         </div>
     </form>
 </div>
+
+@section scripts{ 
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
 
 

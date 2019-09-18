@@ -14,7 +14,7 @@ namespace BookListRazor.Model
         }
 
         //Create a DB set
-        public DbSet<Book> Books { get; set; }
+        public DbSet<Book> Books{ get; set; }
 
     }
 }
